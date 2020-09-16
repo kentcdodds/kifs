@@ -49,6 +49,7 @@
   },
   "laugh": {
     "gif": "https://giphy.com/gifs/laughing-kentcdodds-dAu6gql3xTuhDz9oHE",
+    "aliases": ["lol", "laughing", "haha"],
     "emojiAliases": ["😆", "🤣", "😂"]
   },
   "idea": {
