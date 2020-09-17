@@ -4,10 +4,13 @@
     "aliases": ["grimmace", "ouch", "whoops"],
     "emojiAliases": ["😬"]
   },
+  "me ashamed": {
+    "gif": "https://giphy.com/gifs/embarrased-raise-hand-kentcdodds-mSvjKozOe91ajSAcmJ"
+  },
   "me": {
-    "gif": "https://giphy.com/gifs/embarrased-raise-hand-kentcdodds-mSvjKozOe91ajSAcmJ",
-    "aliases": ["raise hand"],
-    "emojiAliases": ["✋"]
+    "gif": "https://giphy.com/gifs/volunteer-raise-hand-kentcdodds-GaCpeiD76nlGATdDwK",
+    "aliases": ["volunteer", "raise hand"],
+    "emojiAliases": ["✋", "🙌"]
   },
   "sweet": {
     "gif": "https://giphy.com/gifs/sweet-flip-roller-blades-MDxjbPCg6DGf8JclbR",
