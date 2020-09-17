@@ -1,11 +1,17 @@
 {
+  "heh": {
+    "gif": "https://giphy.com/gifs/nervous-laugh-kentcdodds-sweat-smile-UTp7EtRrUqfmykQe30",
+    "aliases": ["sweat smile", "nervous laugh"],
+    "emojiAliases": ["😅"]
+  },
   "oops": {
     "gif": "https://giphy.com/gifs/ouch-kentcdodds-grimmace-463VtokpOOCSHSy8ef",
-    "aliases": ["grimmace", "ouch", "whoops"],
+    "aliases": ["grimmace", "ouch", "whoops", "wasn't me"],
     "emojiAliases": ["😬"]
   },
   "me ashamed": {
-    "gif": "https://giphy.com/gifs/embarrased-raise-hand-kentcdodds-mSvjKozOe91ajSAcmJ"
+    "gif": "https://giphy.com/gifs/embarrased-raise-hand-kentcdodds-mSvjKozOe91ajSAcmJ",
+    "aliases": ["it was me", "my bad"]
   },
   "me": {
     "gif": "https://giphy.com/gifs/volunteer-raise-hand-kentcdodds-GaCpeiD76nlGATdDwK",
