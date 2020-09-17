@@ -1,4 +1,14 @@
 {
+  "oops": {
+    "gif": "https://giphy.com/gifs/ouch-kentcdodds-grimmace-463VtokpOOCSHSy8ef",
+    "aliases": ["grimmace", "ouch", "whoops"],
+    "emojiAliases": ["😬"]
+  },
+  "me": {
+    "gif": "https://giphy.com/gifs/embarrased-raise-hand-kentcdodds-mSvjKozOe91ajSAcmJ",
+    "aliases": ["raise hand"],
+    "emojiAliases": ["✋"]
+  },
   "sweet": {
     "gif": "https://giphy.com/gifs/sweet-flip-roller-blades-MDxjbPCg6DGf8JclbR",
     "emojiAliases": ["🍬", "🍭"]
