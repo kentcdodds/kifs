@@ -1,4 +1,9 @@
 {
+  "scream": {
+    "gif": "https://giphy.com/gifs/scream-kentcdodds-EPRtPNWIT3OQwI2vd7",
+    "aliases": ["scared"],
+    "emojiAliases": ["😱"]
+  },
   "heh": {
     "gif": "https://giphy.com/gifs/nervous-laugh-kentcdodds-sweat-smile-UTp7EtRrUqfmykQe30",
     "aliases": ["sweat smile", "nervous laugh"],
