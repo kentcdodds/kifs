@@ -8,4 +8,4 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 14.x
-    - run: node ./test.js
+    - run: npx -p parse-json@5 ./test.js
