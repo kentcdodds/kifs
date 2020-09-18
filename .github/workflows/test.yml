@@ -5,10 +5,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Install parse-json and validate json
+        uses: actions/setup-node@v1
         with:
           node-version: 14.x
       - run: |
-          npm ci
-          npm test
+          npm install parse-json@5
+          node -e "require('parse-json')(require('fs').readFileSync('./kifs.json', 'utf-8'))"
+          echo kifs.json is valid
 
