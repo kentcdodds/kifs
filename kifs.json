@@ -1,4 +1,9 @@
 {
+  "relieved": {
+    "gif": "https://giphy.com/gifs/relief-relieved-kentcdodds-k12IiLbb3djyDNKCi2",
+    "aliases": ["relief", "phew"],
+    "emojiAliases": ["😌"]
+  },
   "facepalm": {
     "gif": "https://giphy.com/gifs/facepalm-face-palm-kentcdodds-IqmKVhCAAYCwAKQqyz",
     "aliases": ["face palm"],
