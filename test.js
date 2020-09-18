@@ -1,2 +1,2 @@
-// if this fails then we know the json is inavlid
-require('./kifs.json')
+require('parse-json')(require('fs').readFileSync('./kifs.json', 'utf-8'))
+cosole.log('kifs json is valid')
