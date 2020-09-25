@@ -56,7 +56,8 @@
     "emojiAliases": ["👏"]
   },
   "you're awesome": {
-    "gif": "https://giphy.com/gifs/youre-awesome-kentcdodds-SXlgWqXyqddHfGCc8n"
+    "gif": "https://giphy.com/gifs/youre-awesome-kentcdodds-SXlgWqXyqddHfGCc8n",
+    "emojiAliases": ["😎"]
   },
   "aw thanks": {
     "gif": "https://giphy.com/gifs/thanks-aw-kentcdodds-W6QJfAyl7hFezUcXvd"
