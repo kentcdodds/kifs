@@ -149,7 +149,7 @@
   },
   "hi": {
     "gif": "https://giphy.com/gifs/hi-kentcdodds-VbzmrabLQFE8VbQY3V",
-    "aliases": ["wave", "hello"],
+    "aliases": ["wave", "hello", "welcome"],
     "emojiAliases": ["👋"]
   },
   "huh": {
