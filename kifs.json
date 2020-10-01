@@ -152,6 +152,11 @@
     "aliases": ["wave", "hello", "welcome"],
     "emojiAliases": ["👋"]
   },
+  "kody hi": {
+    "gif": "https://giphy.com/gifs/koala-kentcdodds-kody-ttBQo0ODMHLZ63sPOo",
+    "aliases": ["kody hello", "kody wave", "kody welcome"],
+    "emojiAliases": ["🐨👋", "🐨 👋", "👋 🐨", "👋🐨"]
+  },
   "huh": {
     "gif": "https://giphy.com/gifs/huh-kentcdodds-RkLARRPJk0dVDU8jfe"
   },
