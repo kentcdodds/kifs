@@ -33,14 +33,23 @@
     "aliases": ["volunteer", "raise hand"],
     "emojiAliases": ["✋", "🙌"]
   },
+  "please": {
+    "gif": "https://giphy.com/gifs/please-kentcdodds-3w14R8TD1adDnR1IH5",
+    "aliases": ["beg", "begging", "mercy", "plead", "pleading"],
+    "emojiAliases": ["🥺"]
+  },
+  "pray": {
+    "gif": "https://giphy.com/gifs/pray-kentcdodds-GZEK0w7kZLVDmWeuwt",
+    "aliases": ["praying"],
+    "emojiAliases": ["🙏"]
+  },
   "sweet": {
     "gif": "https://giphy.com/gifs/sweet-flip-roller-blades-MDxjbPCg6DGf8JclbR",
     "emojiAliases": ["🍬", "🍭"]
   },
   "thanks": {
     "gif": "https://giphy.com/gifs/thank-you-kentcdodds-hV7Vz9VwUaedWJZIxp",
-    "aliases": ["thank you"],
-    "emojiAliases": ["🙏"]
+    "aliases": ["thank you"]
   },
   "agree": {
     "gif": "https://giphy.com/gifs/agreed-kentcdodds-IcudIFZssABGjEeceT",
