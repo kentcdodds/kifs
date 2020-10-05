@@ -160,6 +160,13 @@
     "aliases": ["wave", "hello", "welcome"],
     "emojiAliases": ["👋"]
   },
+  "kody welcome": {
+    "gif": "https://giphy.com/gifs/welcome-kentcdodds-Exbs5qdcyonvUxzgXB"
+  },
+  "kody loves you": {
+    "gif": "https://giphy.com/gifs/koala-kentcdodds-kody-Sfw02oBFFmFYWcjzqC",
+    "emojiAliases": ["🐨❤️", "❤️🐨"]
+  },
   "kody hi": {
     "gif": "https://giphy.com/gifs/koala-kentcdodds-kody-ttBQo0ODMHLZ63sPOo",
     "aliases": ["kody hello", "kody wave", "kody welcome"],
