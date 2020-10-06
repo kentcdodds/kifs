@@ -7,6 +7,11 @@
     "aliases": ["agreed"],
     "gif": "https://giphy.com/gifs/agreed-kentcdodds-IcudIFZssABGjEeceT"
   },
+  "amazed": {
+    "aliases": ["shocked", "shock"],
+    "emojiAliases": ["😮"],
+    "gif": "https://giphy.com/gifs/sunglasses-amazed-kentcdodds-IZ2eI0akSxm0R0k50g"
+  },
   "applause": {
     "aliases": ["bravo"],
     "emojiAliases": ["👏"],
@@ -29,14 +34,39 @@
     "emojiAliases": ["🧑‍🍳", "👩‍🍳", "👨‍🍳"],
     "gif": "https://giphy.com/gifs/chefs-kiss-kentcdodds-JtH6Z1hYsrdnAWEdtZ"
   },
+  "dance": {
+    "aliases": ["dancing", "party"],
+    "emojiAliases": ["💃", "🕺"],
+    "gif": "https://giphy.com/gifs/dance-dancing-knetcdodds-DZAdnjbdELMouZRC80"
+  },
+  "deal with it": {
+    "gif": "https://giphy.com/gifs/sunglasses-deal-with-it-kentcdodds-zyxTRH1khjsro8n0m0"
+  },
   "excited": {
     "emojiAliases": ["🤩"],
     "gif": "https://giphy.com/gifs/excited-kentcdodds-cjPz6B53w0VvI0Oi4G"
+  },
+  "ew": {
+    "aliases": ["eww", "ewww"],
+    "gif": "https://giphy.com/gifs/ew-kentcdodds-VrLh4IXa7cfAtAsJR0"
   },
   "facepalm": {
     "aliases": ["face palm"],
     "emojiAliases": ["🤦", "🤦‍♂️", "🤦‍♀️"],
     "gif": "https://giphy.com/gifs/facepalm-face-palm-kentcdodds-IqmKVhCAAYCwAKQqyz"
+  },
+  "fist bump": {
+    "emojiAliases": ["👊", "🤜", "🤛", "🤜🤛"],
+    "gif": "https://giphy.com/gifs/fist-bump-kentcdodds-x7kQjh9VItHviGkVvv"
+  },
+  "good luck": {
+    "aliases": ["salute"],
+    "gif": "https://giphy.com/gifs/salute-good-luck-kentcdodds-LlRaLBoGIx1cTbr70t"
+  },
+  "good luck 3": {
+    "aliases": ["fingers crossed"],
+    "emojiAliases": ["🤞"],
+    "gif": "https://giphy.com/gifs/nervous-good-luck-kentcdodds-BWmoZBdIX5YmdLFWl7"
   },
   "goodbye": {
     "aliases": ["i'm out", "I'm out", "see yah", "bye"],
@@ -61,7 +91,12 @@
   },
   "hm": {
     "aliases": ["hmm", "hmmm"],
+    "emojiAliases": ["🤨"],
     "gif": "https://giphy.com/gifs/hmmm-eyebrow-kentcdodds-J2yDtNrNFsNDBJk2rR"
+  },
+  "hm sunglasses": {
+    "emojiAliases": ["🤨🕶", "🧐"],
+    "gif": "https://giphy.com/gifs/sunglasses-huh-kentcdodds-dzcw9DRcyOTWZ3TPF4"
   },
   "huh": {
     "gif": "https://giphy.com/gifs/huh-kentcdodds-RkLARRPJk0dVDU8jfe"
@@ -69,6 +104,24 @@
   "idea": {
     "emojiAliases": ["💡"],
     "gif": "https://giphy.com/gifs/idea-kentcdodds-dstfj1vQEvgTVzbTu9"
+  },
+  "im awesome": {
+    "aliases": ["I'm awesome"],
+    "emojiAliases": ["😎"],
+    "gif": "https://giphy.com/gifs/sunglasses-kentcdodds-im-awesome-JseHdZzok0KWXG4QQy"
+  },
+  "im back": {
+    "aliases": ["hello there", "I'm back"],
+    "gif": "https://giphy.com/gifs/hello-there-im-back-kentcdodds-9tMFA5ey48Swc2Fgef"
+  },
+  "im cool": {
+    "emojiAliases": ["🕶"],
+    "gif": "https://giphy.com/gifs/im-cool-kentcdodds-2CiBjvs4zpVvTMElSi"
+  },
+  "im out": {
+    "aliases": ["run away"],
+    "emojiAliases": ["🚪🏃", "🚪🏃‍♂️", "🚪🏃‍♀️"],
+    "gif": "https://giphy.com/gifs/ah-run-away-kentcdodds-s49zBBQJeF1qSsAqac"
   },
   "just do it": {
     "gif": "https://giphy.com/gifs/just-do-it-kentcdodds-H3Ga5LUGmDv6Fs87ZJ"
@@ -81,6 +134,10 @@
   },
   "just do it 4": {
     "gif": "https://giphy.com/gifs/just-do-it-kentcdodds-lqLude9QGxiaNfy8gZ"
+  },
+  "kody deal with it": {
+    "emojiAliases": ["🐨🕶"],
+    "gif": "https://giphy.com/gifs/koala-kentcdodds-kody-UGlzK0UIppqAIdXX4M"
   },
   "kody hi": {
     "aliases": ["kody hello", "kody wave"],
@@ -97,6 +154,15 @@
   },
   "kody welcome": {
     "gif": "https://giphy.com/gifs/welcome-kentcdodds-Exbs5qdcyonvUxzgXB"
+  },
+  "kody sup": {
+    "emojiAliases": ["🐨 sup", "sup 🐨"],
+    "gif": "https://giphy.com/gifs/koala-kentcdodds-kody-o55izBFddN55bduLL4"
+  },
+  "kody you're awesome": {
+    "aliases": ["kody things you're awesome", "kody youre awesome"],
+    "emojiAliases": ["🐨👍", "👍🐨"],
+    "gif": "https://giphy.com/gifs/koala-kentcdodds-kody-VLD1f2ZoyI6dJHIasj"
   },
   "laugh": {
     "aliases": ["lol", "laughing", "haha"],
@@ -124,9 +190,22 @@
     "emojiAliases": ["🤯"],
     "gif": "https://giphy.com/gifs/mind-blown-amazed-kentcdodds-fYB7BTqxTvBIvNeS5l"
   },
-  "no": {
-    "aliases": ["noo", "nooo"],
+  "nervous": {
+    "aliases": ["worried", "worry"],
+    "emojiAliases": ["😟"],
+    "gif": "https://giphy.com/gifs/nervous-kentcdodds-q5aghjQNCL3vZHklFh"
+  },
+  "nevermind": {
+    "gif": "https://giphy.com/gifs/whoops-kentcdodds-whoa-nevermind-90eX3j56MbBnNnKe1Z"
+  },
+  "nope": {
+    "aliases": ["no", "don't want", "dont want", "do not want"],
     "emojiAliases": ["🙅", "🙅‍♂️", "🙅‍♀️"],
+    "gif": "https://giphy.com/gifs/nope-dont-want-kentcdodds-D7INOOYIhRzyspcBPP"
+  },
+  "noo": {
+    "aliases": ["nooo"],
+    "emojiAliases": ["😭"],
     "gif": "https://giphy.com/gifs/nooooo-kentcdodds-VzfU9S4UsFW0PeISZJ"
   },
   "nono": {
@@ -139,9 +218,14 @@
     "emojiAliases": ["😮"],
     "gif": "https://giphy.com/gifs/oh-huh-duh-jOzQAhuT3WUp19JldV"
   },
+  "oh no": {
+    "aliases": ["omg", "oh my goodness"],
+    "emojiAliases": ["🤭"],
+    "gif": "https://giphy.com/gifs/oh-no-my-goodness-kentcdodds-DKIiS4u54jrbf8mMJu"
+  },
   "oops": {
     "aliases": ["grimmace", "ouch", "whoops", "wasn't me"],
-    "emojiAliases": ["😬"],
+    "emojiAliases": ["😬", "😣"],
     "gif": "https://giphy.com/gifs/ouch-kentcdodds-grimmace-463VtokpOOCSHSy8ef"
   },
   "peace": {
@@ -189,6 +273,9 @@
   "spinning": {
     "gif": "https://giphy.com/gifs/space-react-kentcdodds-S6fwymvLr3hfFCEIU9"
   },
+  "sup": {
+    "gif": "https://giphy.com/gifs/sunglasses-sup-kentcdodds-oFKxxwNVsQSwgFYSI0"
+  },
   "sweet": {
     "emojiAliases": ["🍬", "🍭"],
     "gif": "https://giphy.com/gifs/sweet-flip-roller-blades-MDxjbPCg6DGf8JclbR"
@@ -201,18 +288,32 @@
     "emojiAliases": ["☝️"],
     "gif": "https://giphy.com/gifs/kentcdodds-Lq6JZYxWUFdabFfwGF"
   },
+  "thumbs up": {
+    "aliases": ["good luck 2"],
+    "emojiAliases": ["👍"],
+    "gif": "https://giphy.com/gifs/thumbs-up-good-luck-kentcdodds-oMhWqmZAbMtw9EzjkV"
+  },
   "waiting": {
     "aliases": ["hurry"],
     "emojiAliases": ["🏃", "🏃‍♀️", "🏃‍♂️", "⌚", "⏱"],
     "gif": "https://giphy.com/gifs/waiting-Y2yKmMembXGbQLb0ne"
   },
+  "wink": {
+    "emojiAliases": ["😉"],
+    "gif": "https://giphy.com/gifs/wink-kentcdodds-mdg5xOhwXtaw7wlg0z"
+  },
   "yes": {
     "aliases": ["awesome"],
-    "emojiAliases": ["👍"],
     "gif": "https://giphy.com/gifs/yes-kentcdodds-mBwNA1bBnbHcZqhaLI"
   },
+  "you got this": {
+    "emojiAliases": ["👉👍"],
+    "gif": "https://giphy.com/gifs/you-got-this-kentcdodds-qR62wsAeslZmJZu9Kb"
+  },
   "you're awesome": {
-    "emojiAliases": ["😎"],
+    "gif": "https://giphy.com/gifs/sunglasses-youre-awesome-kentcdodds-q6XoZ3VPcQhlkxthVp"
+  },
+  "you're awesome 2": {
     "gif": "https://giphy.com/gifs/youre-awesome-kentcdodds-SXlgWqXyqddHfGCc8n"
   }
 }
