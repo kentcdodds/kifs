@@ -206,10 +206,13 @@
   },
   "peace": {
     "gif": "https://giphy.com/gifs/peace-kentcdodds-j1ygW1a3xnc7UNtj6g",
-    "aliases": ["goodbye"],
     "emojiAliases": ["☮️"]
   },
   "peace fall": {
     "gif": "https://giphy.com/gifs/fall-peace-kentcdodds-U3nGECxxmHugNeAm6n"
+  },
+  "goodbye": {
+    "gif": "https://giphy.com/gifs/goodbye-im-out-kentcdodds-gYw419SYZPBg9F4o5r",
+    "aliases": ["i'm out", "I'm out", "see yah", "bye"]
   }
 }
