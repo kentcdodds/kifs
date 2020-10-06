@@ -31,12 +31,12 @@
     <div id="root"></div>
     <script src="https://unpkg.com/react@16.13.1/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
+    <script src="https://unpkg.com/htm@3.0.4/dist/htm.umd.js"></script>
     <script src="https://unpkg.com/ky@0.23.0/umd.js"></script>
     <script src="https://unpkg.com/react-query@2.5.13/dist/react-query.production.min.js"></script>
     <script src="https://unpkg.com/react-error-boundary@2.3.1/dist/react-error-boundary.umd.min.js"></script>
     <script src="https://unpkg.com/match-sorter@4.2.1/dist/match-sorter.umd.min.js"></script>
-    <script type="text/babel">
+    <script>
       const {
         React,
         ReactDOM,
@@ -45,7 +45,10 @@
         ky,
         leven,
         matchSorter: {default: matchSorter},
+        htm,
       } = window
+
+      const html = htm.bind(React.createElement)
 
       const getGiphyUrl = gifLink =>
         `https://i.giphy.com/${gifLink.split('/').pop().split('-').pop()}.gif`
@@ -77,38 +80,41 @@
             keys: ['key', 'aliases', 'emojiAliases'],
           })
 
-          return (
+          return html`
             <div
-              style={{
+              style=${{
                 maxWidth: `calc(900px + 10vw)`,
                 margin: 'auto',
                 padding: '0 5vw',
               }}
             >
               <div>
-                <h1 style={{textAlign: 'center'}}>Kifs Directory</h1>
-                <em style={{textAlign: 'center', display: 'block'}}>
+                <h1 style=${{textAlign: 'center'}}>Kifs Directory</h1>
+                <em style=${{textAlign: 'center', display: 'block'}}>
                   A list of available kifs (Kent Gifs)
                 </em>
               </div>
               <div>
                 <h2>How to use this page</h2>
                 <p>
-                  In{' '}
+                  In${' '}
                   <a href="https://kentcdodds.com/discord">
-                    KCD Community on Discord
-                  </a>
-                  {', '}you can send a "kif" using the KCD Bot command:{' '}
+                    KCD Community on Discord</a
+                  >, you can send a "kif" using the KCD Bot command:
                   <code>?kif</code>. For example: <code>?kif amazed</code> would
-                  send{' '}
-                  <a href="https://giphy.com/gifs/sunglasses-amazed-kentcdodds-IZ2eI0akSxm0R0k50g">
-                    the "amazed" kif
-                  </a>
-                  {'. '} And sending <code>?kif 👊 @kentcdodds</code> would send{' '}
-                  <a href="https://giphy.com/gifs/fist-bump-kentcdodds-x7kQjh9VItHviGkVvv">
+                  send${' '}
+                  <a
+                    href="https://giphy.com/gifs/sunglasses-amazed-kentcdodds-IZ2eI0akSxm0R0k50g"
+                  >
+                    the "amazed" kif</a
+                  >. And sending <code>?kif 👊 @kentcdodds</code> would
+                  send${' '}
+                  <a
+                    href="https://giphy.com/gifs/fist-bump-kentcdodds-x7kQjh9VItHviGkVvv"
+                  >
                     the "fist bump" kif
-                  </a>{' '}
-                  to <code>@kentcdodds</code>.
+                  </a>
+                  ${' '}to <code>@kentcdodds</code>.
                 </p>
                 <p>
                   This directory just makes it easier to know what kifs are
@@ -117,20 +123,20 @@
                 </p>
               </div>
               <div>
-                <form onSubmit={e => e.preventDefault()}>
+                <form onSubmit=${e => e.preventDefault()}>
                   <input
-                    style={{width: '100%'}}
-                    onChange={event => setSearch(event.target.value)}
+                    style=${{width: '100%'}}
+                    onChange=${event => setSearch(event.target.value)}
                     type="search"
                     placeholder="Search kifs"
                     aria-label="Search kifs"
-                    value={search}
+                    value=${search}
                     autofocus="heck yah"
                   />
                 </form>
               </div>
               <ul
-                style={{
+                style=${{
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fill, 200px)',
                   justifyContent: 'center',
@@ -142,50 +148,63 @@
                   margin: 0,
                 }}
               >
-                {kifs.map(({key, gif, aliases = [], emojiAliases = []}) => (
-                  <li
-                    key={key}
-                    style={{maxHeight: 200, maxWidth: 200, cursor: 'pointer'}}
-                    onClick={() => {
-                      const text = `?kif ${key}`
-                      navigator.clipboard.writeText(text).then(
-                        () => alert(`copied "${text}" to clipboard`),
-                        () => alert('error copying'),
-                      )
-                    }}
-                  >
-                    <img
-                      style={{display: 'block', width: '100%'}}
-                      alt={key}
-                      src={getGiphyUrl(gif)}
-                    />
-                    <div>
-                      <strong>{key}</strong>
-                      <br />
-                      <small>{[...aliases, ...emojiAliases].join(', ')}</small>
-                    </div>
-                  </li>
-                ))}
+                ${kifs.map(
+                  ({key, gif, aliases = [], emojiAliases = []}) => html`
+                    <li
+                      key=${key}
+                      style=${{
+                        maxHeight: 200,
+                        maxWidth: 200,
+                        cursor: 'pointer',
+                      }}
+                      onClick=${() => {
+                        const text = `?kif ${key}`
+                        navigator.clipboard.writeText(text).then(
+                          () => alert(`copied "${text}" to clipboard`),
+                          () => alert('error copying'),
+                        )
+                      }}
+                    >
+                      <img
+                        style=${{display: 'block', width: '100%'}}
+                        alt=${key}
+                        src=${getGiphyUrl(gif)}
+                      />
+                      <div>
+                        <strong>${key}</strong>
+                        <br />
+                        <small
+                          >${[...aliases, ...emojiAliases].join(', ')}</small
+                        >
+                      </div>
+                    </li>
+                  `,
+                )}
               </ul>
               <div
-                style={{padding: 20, display: 'flex', justifyContent: 'center'}}
+                style=${{
+                  padding: 20,
+                  display: 'flex',
+                  justifyContent: 'center',
+                }}
               >
                 <small>
-                  Created with 💙 by Kent C. Dodds in ~10 minutes. Feel free to{' '}
+                  Created with 💙 by Kent C. Dodds in ~10 minutes. Feel free
+                  to${' '}
                   <a href="https://github.com/kentcdodds/kifs/issues/3">
                     make it better
                   </a>
                 </small>
               </div>
             </div>
-          )
+          `
         }
       }
 
       function ErrorFallback({error, resetErrorBoundary}) {
-        return (
+        return htm`
           <div
-            style={{
+            style=${{
               display: 'flex',
               alignItems: 'center',
               flexDirection: 'column',
@@ -194,38 +213,38 @@
           >
             <p>Oh no! Something went wrong!</p>
             <div>
-              <p>{`Here's the error:`}</p>
+              <p>Here's the error:</p>
               <pre
-                style={{
+                style=${{
                   color: 'red',
                   overflowY: 'scroll',
                   whiteSpace: 'break-spaces',
                 }}
               >
-                {error.message}
+                ${error.message}
               </pre>
             </div>
             <div>
               <p>Try doing one of these things to fix this:</p>
               <ol>
                 <li>
-                  <button onClick={resetErrorBoundary}>Rerender the app</button>
+                  <button onClick=${resetErrorBoundary}>Rerender the app</button>
                 </li>
                 <li>
-                  <button onClick={() => window.location.reload()}>
+                  <button onClick=${() => window.location.reload()}>
                     Refresh the page
                   </button>
                 </li>
               </ol>
             </div>
           </div>
-        )
+        `
       }
 
       ReactDOM.render(
-        <ErrorBoundary FallbackComponent={ErrorFallback}>
-          <App />
-        </ErrorBoundary>,
+        html`<${ErrorBoundary} FallbackComponent="{ErrorFallback}">
+          <${App} />
+        <//>`,
         document.getElementById('root'),
       )
     </script>
