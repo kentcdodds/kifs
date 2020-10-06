@@ -35,6 +35,7 @@
     <script src="https://unpkg.com/ky@0.23.0/umd.js"></script>
     <script src="https://unpkg.com/react-query@2.5.13/dist/react-query.production.min.js"></script>
     <script src="https://unpkg.com/react-error-boundary@2.3.1/dist/react-error-boundary.umd.min.js"></script>
+    <script src="https://unpkg.com/match-sorter@4.2.1/dist/match-sorter.umd.min.js"></script>
     <script type="text/babel">
       const {
         React,
@@ -42,20 +43,27 @@
         ReactQuery: {useQuery},
         ReactErrorBoundary: {ErrorBoundary, useErrorHandler},
         ky,
+        leven,
+        matchSorter: {default: matchSorter},
       } = window
 
       const getGiphyUrl = gifLink =>
         `https://i.giphy.com/${gifLink.split('/').pop().split('-').pop()}.gif`
 
       function App() {
-        const {data, error, status} = useQuery({
+        const [search, setSearch] = React.useState('')
+
+        const {data = [], error, status} = useQuery({
           queryKey: 'kifs',
           queryFn: () =>
             ky
               .get(
                 'https://raw.githubusercontent.com/kentcdodds/kifs/main/kifs.json',
               )
-              .json(),
+              .json()
+              .then(data =>
+                Object.entries(data).map(([key, kif]) => ({key, ...kif})),
+              ),
         })
 
         useErrorHandler(error)
@@ -65,11 +73,16 @@
         }
 
         if (status === 'success') {
+          const kifs = matchSorter(data, search, {
+            keys: ['key', 'aliases', 'emojiAliases'],
+          })
+
           return (
             <div
               style={{
-                maxWidth: 900,
+                maxWidth: `calc(900px + 10vw)`,
                 margin: 'auto',
+                padding: '0 5vw',
               }}
             >
               <div>
@@ -103,6 +116,19 @@
                   it will be copied to your clipboard.
                 </p>
               </div>
+              <div>
+                <form onSubmit={e => e.preventDefault()}>
+                  <input
+                    style={{width: '100%'}}
+                    onChange={event => setSearch(event.target.value)}
+                    type="search"
+                    placeholder="Search kifs"
+                    aria-label="Search kifs"
+                    value={search}
+                    autofocus="heck yah"
+                  />
+                </form>
+              </div>
               <ul
                 style={{
                   display: 'grid',
@@ -116,34 +142,30 @@
                   margin: 0,
                 }}
               >
-                {Object.entries(data).map(
-                  ([key, {gif, aliases = [], emojiAliases = []}]) => (
-                    <li
-                      key={key}
-                      style={{maxHeight: 200, maxWidth: 200, cursor: 'pointer'}}
-                      onClick={() => {
-                        const text = `?kif ${key}`
-                        navigator.clipboard.writeText(text).then(
-                          () => alert(`copied "${text}" to clipboard`),
-                          () => alert('error copying'),
-                        )
-                      }}
-                    >
-                      <img
-                        style={{display: 'block', width: '100%'}}
-                        alt={key}
-                        src={getGiphyUrl(gif)}
-                      />
-                      <div>
-                        <strong>{key}</strong>
-                        <br />
-                        <small>
-                          {[...aliases, ...emojiAliases].join(', ')}
-                        </small>
-                      </div>
-                    </li>
-                  ),
-                )}
+                {kifs.map(({key, gif, aliases = [], emojiAliases = []}) => (
+                  <li
+                    key={key}
+                    style={{maxHeight: 200, maxWidth: 200, cursor: 'pointer'}}
+                    onClick={() => {
+                      const text = `?kif ${key}`
+                      navigator.clipboard.writeText(text).then(
+                        () => alert(`copied "${text}" to clipboard`),
+                        () => alert('error copying'),
+                      )
+                    }}
+                  >
+                    <img
+                      style={{display: 'block', width: '100%'}}
+                      alt={key}
+                      src={getGiphyUrl(gif)}
+                    />
+                    <div>
+                      <strong>{key}</strong>
+                      <br />
+                      <small>{[...aliases, ...emojiAliases].join(', ')}</small>
+                    </div>
+                  </li>
+                ))}
               </ul>
               <div
                 style={{padding: 20, display: 'flex', justifyContent: 'center'}}
