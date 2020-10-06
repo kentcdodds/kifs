@@ -1,0 +1,172 @@
+<html>
+  <head>
+    <title>Kifs Directory</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,shrink-to-fit=no"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Rajdhani', sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.13.1/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
+    <script src="https://unpkg.com/ky@0.23.0/umd.js"></script>
+    <script src="https://unpkg.com/react-query@2.5.13/dist/react-query.production.min.js"></script>
+    <script src="https://unpkg.com/react-virtual@2.2.1/dist/react-virtual.production.min.js"></script>
+    <script src="https://unpkg.com/react-error-boundary@2.3.1/dist/react-error-boundary.umd.min.js"></script>
+    <script type="text/babel">
+      const {
+        React,
+        ReactDOM,
+        ReactQuery: {
+          useQuery,
+          useMutation,
+          queryCache,
+          ReactQueryConfigProvider,
+        },
+        ReactVirtual: {useVirtual},
+        ReactErrorBoundary: {ErrorBoundary, useErrorHandler},
+        ky,
+      } = window
+
+      const getGiphyUrl = gifLink =>
+        `https://i.giphy.com/${gifLink.split('/').pop().split('-').pop()}.gif`
+
+      function App() {
+        const {data, error, status} = useQuery({
+          queryKey: 'kifs',
+          queryFn: () =>
+            ky
+              .get(
+                'https://raw.githubusercontent.com/kentcdodds/kifs/main/kifs.json',
+              )
+              .json(),
+        })
+
+        useErrorHandler(error)
+
+        if (status === 'idle' || status === 'loading') {
+          return '...'
+        }
+
+        if (status === 'success') {
+          return (
+            <div>
+              <div>
+                <h1 style={{textAlign: 'center'}}>Kifs Directory</h1>
+                <em style={{textAlign: 'center', display: 'block'}}>
+                  A list of available kifs (Kent Gifs)
+                </em>
+              </div>
+              <ul
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fill, 200px)',
+                  justifyContent: 'center',
+                  gap: 20,
+                  listStyle: 'none',
+                  paddingTop: 30,
+                  paddingLeft: 0,
+                  margin: 0,
+                  maxWidth: 900,
+                  margin: 'auto',
+                }}
+              >
+                {Object.entries(data).map(
+                  ([key, {gif, aliases = [], emojiAliases = []}]) => (
+                    <li
+                      key={key}
+                      style={{maxHeight: 200, maxWidth: 200, cursor: 'pointer'}}
+                      onClick={() => {
+                        const text = `?kif ${key}`
+                        navigator.clipboard.writeText(text).then(
+                          () => alert(`copied "${text}" to clipboard`),
+                          () => alert('error copying'),
+                        )
+                      }}
+                    >
+                      <img
+                        style={{display: 'block', width: '100%'}}
+                        alt={key}
+                        src={getGiphyUrl(gif)}
+                      />
+                      <div>
+                        <strong>{key}</strong>
+                        <br />
+                        <small>
+                          {[...aliases, ...emojiAliases].join(', ')}
+                        </small>
+                      </div>
+                    </li>
+                  ),
+                )}
+              </ul>
+            </div>
+          )
+        }
+      }
+
+      function ErrorFallback({error, resetErrorBoundary}) {
+        return (
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              flexDirection: 'column',
+              marginTop: '50px',
+            }}
+          >
+            <p>Oh no! Something went wrong!</p>
+            <div>
+              <p>{`Here's the error:`}</p>
+              <pre
+                style={{
+                  color: 'red',
+                  overflowY: 'scroll',
+                  whiteSpace: 'break-spaces',
+                }}
+              >
+                {error.message}
+              </pre>
+            </div>
+            <div>
+              <p>Try doing one of these things to fix this:</p>
+              <ol>
+                <li>
+                  <button onClick={resetErrorBoundary}>Rerender the app</button>
+                </li>
+                <li>
+                  <button onClick={() => window.location.reload()}>
+                    Refresh the page
+                  </button>
+                </li>
+              </ol>
+            </div>
+          </div>
+        )
+      }
+
+      ReactDOM.render(
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <App />
+        </ErrorBoundary>,
+        document.getElementById('root'),
+      )
+    </script>
+  </body>
+</html>
