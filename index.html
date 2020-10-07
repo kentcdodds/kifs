@@ -29,50 +29,45 @@
   </head>
   <body>
     <div id="root"></div>
-    <script src="https://unpkg.com/react@16.13.1/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/htm@3.0.4/dist/htm.umd.js"></script>
-    <script src="https://unpkg.com/ky@0.23.0/umd.js"></script>
-    <script src="https://unpkg.com/react-query@2.5.13/dist/react-query.production.min.js"></script>
-    <script src="https://unpkg.com/react-error-boundary@2.3.1/dist/react-error-boundary.umd.min.js"></script>
+    <script src="https://unpkg.com/htm/preact/standalone.umd.js"></script>
     <script src="https://unpkg.com/match-sorter@4.2.1/dist/match-sorter.umd.min.js"></script>
     <script>
       const {
-        React,
-        ReactDOM,
-        ReactQuery: {useQuery},
-        ReactErrorBoundary: {ErrorBoundary, useErrorHandler},
-        ky,
-        leven,
-        matchSorter: {default: matchSorter},
-        htm,
-      } = window
+        matchSorter: { default: matchSorter },
+        htmPreact: { render, html },
+      } = window;
 
-      const html = htm.bind(React.createElement)
+      let initialState = { search: "", data: [], error: null, status: "idle" };
+      let state = {};
 
-      const getGiphyUrl = gifLink =>
-        `https://i.giphy.com/${gifLink.split('/').pop().split('-').pop()}.gif`
+      const setState = (newState) => {
+        state = { ...state, ...newState };
+        render(App(state), document.querySelector("#root"));
+      };
 
-      function App() {
-        const [search, setSearch] = React.useState('')
+      const init = () => {
+        setState(initialState);
+        fetch(
+          "https://raw.githubusercontent.com/kentcdodds/kifs/main/kifs.json"
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            setState({
+              data: Object.entries(data).map(([key, kif]) => ({ key, ...kif })),
+              status: "success",
+            });
+          })
+          .catch((e) => {
+            setState({ data: [], error: e, data: [], status: "error" });
+          });
+      };
 
-        const {data = [], error, status} = useQuery({
-          queryKey: 'kifs',
-          queryFn: () =>
-            ky
-              .get(
-                'https://raw.githubusercontent.com/kentcdodds/kifs/main/kifs.json',
-              )
-              .json()
-              .then(data =>
-                Object.entries(data).map(([key, kif]) => ({key, ...kif})),
-              ),
-        })
+      const getGiphyUrl = (gifLink) =>
+        `https://is.giphy.com/${gifLink.split("/").pop().split("-").pop()}.gif`;
 
-        useErrorHandler(error)
-
-        if (status === 'idle' || status === 'loading') {
-          return '...'
+      function App({ data, error, search, status }) {
+        if (status === "idle" || status === "loading") {
+          return "...";
         }
 
         if (status === 'success') {
@@ -125,12 +120,11 @@
               <div>
                 <form onSubmit=${e => e.preventDefault()}>
                   <input
-                    style=${{width: '100%'}}
-                    onChange=${event => setSearch(event.target.value)}
+                    style=${{ width: "100%" }}
+                    onInput=${(e) => setState({ search: e.target.value })}
                     type="search"
                     placeholder="Search kifs"
                     aria-label="Search kifs"
-                    value=${search}
                     autofocus="heck yah"
                   />
                 </form>
@@ -238,15 +232,10 @@
               </ol>
             </div>
           </div>
-        `
+        `;
       }
 
-      ReactDOM.render(
-        html`<${ErrorBoundary} FallbackComponent="{ErrorFallback}">
-          <${App} />
-        <//>`,
-        document.getElementById('root'),
-      )
+      init();
     </script>
   </body>
 </html>
