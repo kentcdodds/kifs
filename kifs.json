@@ -85,7 +85,7 @@
     "gif": "https://giphy.com/gifs/nervous-laugh-kentcdodds-sweat-smile-UTp7EtRrUqfmykQe30"
   },
   "hi": {
-    "aliases": ["wave", "hello", "welcome"],
+    "aliases": ["wave", "hello"],
     "emojiAliases": ["👋"],
     "gif": "https://giphy.com/gifs/hi-kentcdodds-VbzmrabLQFE8VbQY3V"
   },
@@ -151,9 +151,6 @@
   "kody no": {
     "emojiAliases": ["🐨🙅‍♂️", "🐨🙅", "🐨🙅‍♀️"],
     "gif": "https://giphy.com/gifs/no-kody-kentcdodds-LNrtJbKxfANBRO1mDk"
-  },
-  "kody welcome": {
-    "gif": "https://giphy.com/gifs/welcome-kentcdodds-Exbs5qdcyonvUxzgXB"
   },
   "kody sup": {
     "emojiAliases": ["🐨 sup", "sup 🐨"],
@@ -297,6 +294,9 @@
     "aliases": ["hurry"],
     "emojiAliases": ["🏃", "🏃‍♀️", "🏃‍♂️", "⌚", "⏱"],
     "gif": "https://giphy.com/gifs/waiting-Y2yKmMembXGbQLb0ne"
+  },
+  "welcome": {
+    "gif": "https://giphy.com/gifs/welcome-kentcdodds-Exbs5qdcyonvUxzgXB"
   },
   "wink": {
     "emojiAliases": ["😉"],
