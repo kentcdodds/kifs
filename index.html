@@ -63,14 +63,18 @@
       };
 
       const getGiphyUrl = (gifLink) =>
-        `https://is.giphy.com/${gifLink.split("/").pop().split("-").pop()}.gif`;
+        `https://i.giphy.com/${gifLink.split("/").pop().split("-").pop()}.gif`;
 
       function App({ data, error, search, status }) {
         if (status === "idle" || status === "loading") {
           return "...";
         }
 
-        if (status === 'success') {
+        if (status === "error") {
+          return html`<${ErrorFallback} error=${error} />`;
+        }
+
+        if (status === "success") {
           const kifs = matchSorter(data, search, {
             keys: ['key', 'aliases', 'emojiAliases'],
           })
@@ -195,8 +199,8 @@
         }
       }
 
-      function ErrorFallback({error, resetErrorBoundary}) {
-        return htm`
+      function ErrorFallback({ error }) {
+        return html`
           <div
             style=${{
               display: 'flex',
@@ -222,7 +226,7 @@
               <p>Try doing one of these things to fix this:</p>
               <ol>
                 <li>
-                  <button onClick=${resetErrorBoundary}>Rerender the app</button>
+                  <button onClick=${init()}>Rerender the app</button>
                 </li>
                 <li>
                   <button onClick=${() => window.location.reload()}>
