@@ -51,7 +51,7 @@
       const html = htm.bind(React.createElement)
 
       const getGiphyUrl = gifLink =>
-        `https://i.giphy.com/${gifLink.split('/').pop().split('-').pop()}.gif`
+        `https://i.giphy.com/${gifLink.split('/').pop().split('-').pop()}.mp4`
 
       function App() {
         const [search, setSearch] = React.useState('')
@@ -165,7 +165,10 @@
                         )
                       }}
                     >
-                      <img
+                      <video
+                        autoPlay                    
+                        loop
+                        muted
                         style=${{display: 'block', width: '100%'}}
                         alt=${key}
                         src=${getGiphyUrl(gif)}
