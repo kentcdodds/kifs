@@ -75,6 +75,10 @@
   "gotcha": {
     "gif": "https://giphy.com/gifs/gotcha-kentcdodds-XeGeQIzpqfL7GtcTMH"
   },
+  "happy birthday": {
+    "emojiAliases": ["🎂", "🥳"],
+    "gif": "https://giphy.com/gifs/happy-birthday-candles-kentcdodds-j9vOY903padraCgM9S"
+  },
   "heehee": {
     "emojiAliases": ["😈"],
     "gif": "https://giphy.com/gifs/heehee-kentcdodds-kFHbtKZjQgU7VN46N2"
@@ -315,5 +319,8 @@
   },
   "you're awesome 2": {
     "gif": "https://giphy.com/gifs/youre-awesome-kentcdodds-SXlgWqXyqddHfGCc8n"
+  },
+  "yum": {
+    "gif": "https://giphy.com/gifs/cake-yum-kentcdodds-AwRKb8HuTbaBZSesMb",
   }
 }
