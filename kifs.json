@@ -17,6 +17,10 @@
     "emojiAliases": ["👏"],
     "gif": "https://giphy.com/gifs/applause-kentcdodds-hU8sgywxcUkYad9O6D"
   },
+  "approve": {
+    "aliases": ["nod"],
+    "gif": "https://giphy.com/gifs/yes-nod-kentcdodds-YvzA7hsb9wtFT408Yp"
+  },
   "aw shucks": {
     "emojiAliases": ["🐨", "😊"],
     "gif": "https://giphy.com/gifs/koala-bear-kody-kentcdodds-kC3NfswHHg0AXtsywr"
@@ -301,6 +305,10 @@
   },
   "welcome": {
     "gif": "https://giphy.com/gifs/welcome-kentcdodds-Exbs5qdcyonvUxzgXB"
+  },
+  "who me": {
+    "aliases": ["who me?", "me?"],
+    "gif": "https://giphy.com/gifs/who-me-kentcdodds-3BTn4X5uE6dYttX98L"
   },
   "wink": {
     "emojiAliases": ["😉"],
