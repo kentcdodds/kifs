@@ -266,6 +266,11 @@
     "emojiAliases": ["😱"],
     "gif": "https://giphy.com/gifs/scream-kentcdodds-EPRtPNWIT3OQwI2vd7"
   },
+  "shrug": {
+    "aliases": ["i don't know", "who knows", "dunno"],
+    "emojiAliases": ["🤷‍♂️", "🤷‍♀️", "🤷"],
+    "gif": "https://giphy.com/gifs/shrug-kentcdodds-zThCvU5AdjHsMTcuYR"
+  },
   "sleepy": {
     "aliases": ["sleep", "tired"],
     "emojiAliases": ["😩", "🛌", "😴", "💤", "😪"],
