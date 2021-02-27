@@ -29,7 +29,6 @@
     "gif": "https://giphy.com/gifs/W6QJfAyl7hFezUcXvd"
   },
   "burn": {
-    "aliases": ["burn"],
     "emojiAliases": ["🔥"],
     "gif": "https://giphy.com/gifs/wX6ouRqT8f7K59gcqZ"
   },
@@ -206,7 +205,7 @@
   },
   "me": {
     "aliases": ["volunteer", "raise hand"],
-    "emojiAliases": ["✋", "🙌"],
+    "emojiAliases": ["✋"],
     "gif": "https://giphy.com/gifs/GaCpeiD76nlGATdDwK"
   },
   "me ashamed": {
