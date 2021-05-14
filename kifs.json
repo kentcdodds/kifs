@@ -168,6 +168,9 @@
   "just do it 4": {
     "gif": "https://giphy.com/gifs/lqLude9QGxiaNfy8gZ"
   },
+  "just do it 5": {
+    "gif": "https://giphy.com/gifs/MMy0P9cHnjLLVKLGDm",
+  },
   "kody deal with it": {
     "emojiAliases": ["🐨🕶"],
     "gif": "https://giphy.com/gifs/UGlzK0UIppqAIdXX4M"
@@ -365,6 +368,9 @@
   "where am i": {
     "aliases": ["where is everyone", "lost"],
     "gif": "https://giphy.com/gifs/BFRrroq6WXyuQ2saif"
+  },
+  "where am i fireworks": {
+    "gif": "https://giphy.com/gifs/0nOnIZyuZEyV8QvE9k"
   },
   "who me": {
     "aliases": ["who me?", "me?"],
