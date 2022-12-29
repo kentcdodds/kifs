@@ -1,4 +1,9 @@
 {
+  "all good here": {
+    "aliases": ["all good"],
+    "emojiAliases": ["🥴"],
+    "gif": "https://giphy.com/gifs/jhwHOadItJpgFXZhc2"
+  },
   "adorable": {
     "aliases": ["cute", "aw"],
     "gif": "https://giphy.com/gifs/H1qlGJ78yOaePRcUBy"
